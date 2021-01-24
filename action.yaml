@@ -1,0 +1,9 @@
+name: superfuds-secret-swap
+description: "'Use s3keyring to get secrets from s3 in eks deployments"
+author: 'David Stiven Avila'
+branding:
+  icon: 'key'
+  color: 'green'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
