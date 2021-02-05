@@ -1,0 +1,22 @@
+name: secrets-swap
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    build-test-publish:
+        name: Publish to Docker
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+
+            - uses: docker/build-push-action@v1
+              with:
+                  username: ${{ github.actor }}
+                  password: ${{ secrets.GITHUB_TOKEN }}
+                  registry: docker.pkg.github.com
+                  repository: superfuds/secrets-swap/secrets-swap
+                  path: .
+                  tags: ${{ github.sha }}, latest
