@@ -6,4 +6,6 @@ RUN pip install awscli
 RUN pip install s3keyring
 
 COPY entrypoint.sh /entrypoint.sh
+COPY .s3keyring.ini /
+
 ENTRYPOINT ["/entrypoint.sh"]
