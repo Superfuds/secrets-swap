@@ -32,14 +32,14 @@ For example:
     ...
     - name: Get s3keyring secrets
       id: s3keyring
-      uses: Superfuds/secrets-swap@1.0.0
+      uses: Superfuds/secrets-swap@v1
       env:
-        app: [APP]
+        deployment_file: [DEPLOYMENT_FILE_PATH]
         environment: [ENVIRONMENT]
         aws_access_key_id: ${{ secrets.BOT_AWS_ACCESS_KEY }}
         aws_secret_access_key: ${{ secrets.BOT_AWS_SECRET_ACCESS_KEY }}
         aws_region: sa-east-1
 ```
 
-- APP: The name of your app, should be consistent with your deployment manifest. `[APP]-deployment.yaml`
+- DEPLOYMENT_FILE_PATH: full path of deployment manifest file. Ej. ` ./deployment.yaml`
 - ENVIRONMENT: Use `staging` or `production`
