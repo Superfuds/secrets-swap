@@ -19,7 +19,7 @@ do
   GROUP=$(echo "$SECRET" | cut -d. -f1)
   KEY=$(echo "$SECRET" | cut -d. -f2)
   PLAIN_SECRET=$(s3keyring --profile "${environment}" get "$GROUP" "$KEY")
-  sed -ie 's/s3keyring:$SECRET/$PLAIN_SECRET/g' ${deployment_file}
+  sed -ie 's/s3keyring:$SECRET/$PLAIN_SECRET/g' "${deployment_file}"
 done
 set -o xtrace
 
